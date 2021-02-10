@@ -17,7 +17,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: "019fd192-f18f-4936-adb3-2fcc88d889c4"
-  imageRepository: "shoppingClient"
+  imageRepository: "shoppingclient"
   containerRegistry: "shoppingacrale.azurecr.io"
   dockerfilePath: "**/Dockerfile"
   tag: "$(Build.BuildId)"
@@ -72,7 +72,7 @@ stages:
 
                 - task: KubernetesManifest@0
                   displayName: Deploy to Kubernetes cluster
-                  name: shoppingClient
+                  name: shoppingclient
                   inputs:
                     action: deploy
                     manifests: |
